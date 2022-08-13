@@ -25,6 +25,15 @@ class SignUpPage extends StatelessWidget {
         password: passwordController.text,
       )) {
         Navigator.pushNamed(context, '/home');
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: alertColor,
+          content: Text(
+            'Gagal Register!',
+            style: primaryTextStyle,
+            textAlign: TextAlign.center,
+          ),
+        ));
       }
     }
 
